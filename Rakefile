@@ -5,13 +5,15 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "move_associations"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "alex@monsterlabs.com.mx"
-    gem.homepage = "http://github.com/juarlex/move_associations"
-    gem.authors = ["juarlex"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.summary = %Q{A gem for ActiveRecord to move associated records based on has_many and has_one associations. }
+    gem.description = %Q{This gem extends ActiveRecord to move associated records based on has_many and has_one associations. }
+    gem.email = "alex@mosterlabs.com.mx"
+    gem.homepage = "http://github.com/monsterlabs/move_associations"
+    gem.authors = ["Alejandro Juarez"]
+    gem.add_development_dependency "shoulda"
+    gem.add_dependency "activerecord", "~> 3.0.0"
+    gem.add_dependency "activesupport", "~> 3.0.0"
+    gem.files =  FileList["[A-Z]*", "{lib}/**/*"]
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

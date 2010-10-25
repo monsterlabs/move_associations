@@ -1,17 +1,30 @@
-= move_associations
+= MoveAssociations
 
-Description goes here.
+This gem extends ActiveRecord to move associated records based on has_many and has_one associations.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+= Getting started
 
-== Copyright
+In your Gemfile:
 
-Copyright (c) 2010 juarlex. See LICENSE for details.
+  gem "move_associations"
+
+= Example usage
+
+  class City
+    validates_presence_of :name
+    belongs_to :state
+    has_many :addresses
+    has_one  :person
+    has_many :institutions
+  end
+
+  @city = City.find(10)
+  @city.move_association(:addresses, 15) => # It move the associated records in addresses table from city with ID 10 to city with ID 15.
+
+  @city = City.find(10)
+  @city.move_associations(15)            => # It moves all the associated records from city with ID 10 to city with ID 15 using the 
+                                            # has_many and has_one relationships.
+
+= Copyright
+
+Copyright (c) 2010 MonsterLabs. See LICENSE for details.
