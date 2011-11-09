@@ -11,8 +11,8 @@ begin
     gem.homepage = "http://github.com/monsterlabs/move_associations"
     gem.authors = ["Alejandro Juarez"]
     gem.add_development_dependency "shoulda"
-    gem.add_dependency "activerecord", "~> 3.0.0"
-    gem.add_dependency "activesupport", "~> 3.0.0"
+    gem.add_dependency "activerecord", "~> 3.1.1"
+    gem.add_dependency "activesupport", "~> 3.1.1"
     gem.files =  FileList["[A-Z]*", "{lib}/**/*"]
   end
   Jeweler::GemcutterTasks.new
